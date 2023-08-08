@@ -1,45 +1,46 @@
-import {  useState } from 'react';
+import { useEffect, useState } from 'react';
+
 import './App.css';
 function App() {
+  
+  const [background, setBackground] = useState("");
+  const [weatherData, setWeatherData] = useState([])
 
-
-  const [background, setBackground] = useState("")
-
-  let weatherMood = "";
-  let checkWeather = "rainy";
-  switch (checkWeather) {
-
-    case "rainy":
-      return weatherMood="/images/rainy.jpg"
-      break;
-    
-    case "sunny":
-      return weatherMood = "/images/sunny.jpg";
-      break;
-
+  function getWeatherData() {
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${process.env.API_KEY}`)
+      .then(response => response.json())
+      .then(data => setWeatherData(data))
+      .catch(error => console.log(error))
   }
-  
 
-  setBackground("/images/cloudy.jpg")
-  
+
+  let weatherMood = "sunny";
+
+  let city = "pune"
+
+
+  useEffect(() => { setBackground(`/images/${weatherMood}.jpg`); getWeatherData() }, [background]);
+
+
+
+
+
 
   return (
     <>
 
-      <div className='Main-Container' style={{
-        background: `url(${background})`,
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat',
-        minWidth:'100vw',
-        minHeight: '100vh'
-        }} >
+      <div className='Main-Container'  >
 
+
+        <img className='background-img' src={background} alt="" />
+
+        {console.log(weatherData.temp)}
 
 
 
 
       </div>
-      
+
     </>
   );
 }

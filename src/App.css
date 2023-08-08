@@ -1,5 +1,16 @@
+body{
+    margin: 0;
+    padding: 0;
+}
 .Main-Container{
-    height: 100vh;
+    height:100vh;
+    padding: 0;
+    margin: 0;
+    background-color: brown;
     width:100vw;
     filter: blur(10px);
+}
+.background-img{
+    width: 100%;
+    height: 100%;
 }

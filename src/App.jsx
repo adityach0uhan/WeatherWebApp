@@ -5,7 +5,6 @@ function App() {
 
   const API_KEY = process.env.REACT_APP_API
 
-
   let weatherMood = "sunny";
   let city = "pune"
 

@@ -7,9 +7,10 @@ import './App.css';
 
 function App() {
 
+  const API_KEY = process.env.REACT_APP_API 
   const [background, setBackground] = useState("");
   const [weatherData, setWeatherData] = useState({})
-  const API_KEY = process.env.REACT_APP_API
+  const [userInput,setUserInput]=useState("")
 
 
   let city = "pune"
@@ -18,7 +19,7 @@ function App() {
   async function getWeatherData() {
 
     try {
-      const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`);
+      const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
       const APIdata = await fetchData.json()
 
       const { temp, feels_like, humidity } = APIdata.main
@@ -30,6 +31,7 @@ function App() {
       const { country, sunrise, sunset } = APIdata.sys;
 
       const weather = APIdata.weather[0].main
+      console.log(weather)
 
       setWeatherData({
         temp,
@@ -47,7 +49,8 @@ function App() {
       console.log(e)
     }
   }
-  useEffect(() => { setBackground(`/images/${weatherData.weather}.jpg`); getWeatherData() }, []);
+  useEffect(() => { setBackground(`/images/${weatherData.weather}.jpg`); getWeatherData() }, [background,city]);
+
 
 
   return (
@@ -55,19 +58,18 @@ function App() {
 
       <div className='Main-Container'  >
 
-
-
         <img className='background-img' src={background} alt="Background Image" />
 
         <div className="content-container">
 
-          <LeftContainer />
+          <LeftContainer
+            setUserInput={setUserInput}
+            temperature={weatherData.temp}
+            
+          />
+
+
           <RightContainer />
-
-
-
-
-
 
         </div>
 

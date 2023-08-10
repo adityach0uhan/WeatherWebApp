@@ -1,0 +1,36 @@
+.right-container{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 7%;
+}
+
+.description-container{
+    height: 60%;
+    background-color: #b8860b;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.four-box-parent{
+    background-color: darkmagenta;
+    height: 25%;
+    display: grid;
+    grid-gap: 1%;
+    width: 100%;
+    justify-items:baseline;
+    align-items: center;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.four-box-parent div{
+    display: flex;
+    border: 1px solid;
+    width: 80%;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    height: 100%;
+}

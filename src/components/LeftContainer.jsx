@@ -2,7 +2,7 @@ import React from 'react';
 import '../App.css';
 import '../styles/leftContainer.css'
 
-const LeftContainer = ({ temperature }) => {
+const LeftContainer = ({ temperature, humidity, country, location }) => {
 
   const sendSearchData = () => {
     console.log()
@@ -25,12 +25,12 @@ const LeftContainer = ({ temperature }) => {
       <div className="city-country-container">
 
         <div className="humidity-container">
-          <span>Humidity</span>
+          <span>{humidity}</span>
         </div>
 
         <div className="place">
-          <span>Country</span>
-          <span>India</span>
+          <span>{country}</span>
+          <span>{location}</span>
         </div>
 
       </div>

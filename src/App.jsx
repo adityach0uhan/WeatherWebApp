@@ -13,7 +13,7 @@ function App() {
   const [userInput,setUserInput]=useState("")
 
 
-  let city = "pune"
+  let city = "pune "
 
 
   async function getWeatherData() {
@@ -30,8 +30,8 @@ function App() {
 
       const { country, sunrise, sunset } = APIdata.sys;
 
-      const weather = APIdata.weather[0].main
-      console.log(weather)
+      const { weather, description } = APIdata.weather[0]
+      
 
       setWeatherData({
         temp,
@@ -42,7 +42,8 @@ function App() {
         sunrise,
         sunset,
         location,
-        weather
+        weather,
+        description
       })
 
     } catch (e) {
@@ -65,11 +66,20 @@ function App() {
           <LeftContainer
             setUserInput={setUserInput}
             temperature={weatherData.temp}
+            humidity={weatherData.humidity}
+            country={weatherData.country}
+            location={weatherData.location}
             
           />
 
-
-          <RightContainer />
+          <RightContainer
+            windSpeed={weatherData.windSpeed}
+            feelsLike={weatherData.feels_like}
+            sunrise={weatherData.sunrise}
+            sunset={weatherData.sunset}
+            weather={weatherData.weather}
+           description={weatherData.description}
+          />
 
         </div>
 

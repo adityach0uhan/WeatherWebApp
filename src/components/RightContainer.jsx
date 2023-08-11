@@ -18,7 +18,7 @@ const RightContainer = ({
 
         <div className="description-container">
 
-          <div>logo</div>
+          <div><i class="fa-solid fa-cloud-sun"></i></div>
           <div>Weather{weather}</div>
           <div>{description}</div>
 

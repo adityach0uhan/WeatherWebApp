@@ -8,10 +8,11 @@ body{
     padding: 0;
     position: relative;
     margin: 0;
+    /* background-color: rgb(0, 0, 0); */
     width:100vw;
 }
 .background-img{
-    filter: blur(10px);
+filter: blur(10px);
     width: 100%;
     height: 100%;
 }
@@ -25,7 +26,8 @@ body{
     top:10%;
     left: 10%;
     height: 80%;
-    background-color: rgba(255, 255, 255, 0.5);
+    /* background-color: rgba(255, 255, 255, 0.5); */
+    color: white;
     border-radius: 20px;
     display: grid;
     grid-template-columns: 1fr 2fr;

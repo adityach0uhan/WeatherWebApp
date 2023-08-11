@@ -13,7 +13,7 @@ function App() {
   const [userInput,setUserInput]=useState("")
 
 
-  let city = "pune "
+  let city = "pune"
 
 
   async function getWeatherData() {
@@ -59,7 +59,9 @@ function App() {
 
       <div className='Main-Container'  >
 
-        <img className='background-img' src={background} alt="Background Image" />
+        {/* <img className='background-img' src={background} alt=""/> */}
+        <img className='background-img' src="../public/images/sunny.jpg" alt=""/>
+
 
         <div className="content-container">
 

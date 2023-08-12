@@ -8,19 +8,23 @@ const RightContainer = ({
   sunrise,
   sunset,
   weather,
-  description}) => {
-  
-  return (
+  description }) => {
 
+
+
+  const sunny = <i className="fa-solid fa - sun"></i>
+  const rainy = <i className="fa-solid fa-cloud-rain"></i>
+  const cloudy = <i className="fa-solid fa-cloud"></i>
+  const haze = <i className="fa-solid fa-smog"></i>
+
+  return (
     <>
-      
       <div className="child-containers right-container">
 
         <div className="description-container">
 
-          <div className='weather-icon'><i class="fa-solid fa-cloud-sun"></i></div>
+          <div className='weather-icon'>{cloudy}</div>
           <div>{weather}</div>
-    
           <div>{description}</div>
 
         </div>
@@ -35,7 +39,7 @@ const RightContainer = ({
           <div>Wind Speed <br /> {windSpeed}</div>
 
         </div>
-        
+
 
       </div>
     </>

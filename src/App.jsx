@@ -30,8 +30,9 @@ function App() {
 
       const { country, sunrise, sunset } = APIdata.sys;
 
-      const { weather, description } = APIdata.weather[0]
+      const { main, description } = APIdata.weather[0]
       
+
 
       setWeatherData({
         temp,
@@ -42,7 +43,7 @@ function App() {
         sunrise,
         sunset,
         location,
-        weather,
+        main,
         description
       })
 
@@ -50,7 +51,7 @@ function App() {
       console.log(e)
     }
   }
-  useEffect(() => { setBackground(`/images/${weatherData.weather}.jpg`); getWeatherData() }, [background,city]);
+  useEffect(() => { setBackground(`/images/${weatherData.main}.jpg`); getWeatherData() }, [background,city]);
 
 
 
@@ -59,10 +60,8 @@ function App() {
 
       <div className='Main-Container'  >
 
-        {/* <img className='background-img' src={background} alt=""/> */}
-        <img className='background-img' src="../public/images/sunny.jpg" alt=""/>
-
-
+        <img className='background-img' src={background} alt=""/>
+       
         <div className="content-container">
 
           <LeftContainer
@@ -79,7 +78,7 @@ function App() {
             feelsLike={weatherData.feels_like}
             sunrise={weatherData.sunrise}
             sunset={weatherData.sunset}
-            weather={weatherData.weather}
+            weather={weatherData.main}
            description={weatherData.description}
           />
 

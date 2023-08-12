@@ -18,7 +18,7 @@ const LeftContainer = ({ temperature, humidity, country, location }) => {
 
       {/* temperature box  */}
       <div className='temperature-container'>
-        <p><i class="fa-solid fa-temperature-empty"></i> {temperature} Deg </p>
+        <p><i className="fa-solid fa-temperature-empty"></i> {temperature} Deg </p>
       </div>
 
 

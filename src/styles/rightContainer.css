@@ -7,18 +7,23 @@
 
 .description-container{
     height: 60%;
-    /* background-color: #b8860b; */
     width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-}
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    place-items: center;
 
+}
+.description-container div{
+    text-align: center;
+    font-size: 1.3rem;
+    box-sizing: border-box;
+}
+.weather-icon i{
+    font-size: 9rem;
+}
 .four-box-parent{
-    /* background-color: darkmagenta; */
     height: 25%;
     display: grid;
-    grid-gap: 1%;
     width: 100%;
     justify-items:baseline;
     align-items: center;
@@ -29,9 +34,10 @@
     display: flex;
     border-radius: 15px ;
     border: 1px solid;
+    text-align: center;
     width: 80%;
     align-items: center;
-    justify-content: center;
     margin-left: 15px;
+    justify-content: center;
     height: 100%;
 }

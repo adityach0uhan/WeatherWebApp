@@ -18,8 +18,9 @@ const RightContainer = ({
 
         <div className="description-container">
 
-          <div><i class="fa-solid fa-cloud-sun"></i></div>
-          <div>Weather{weather}</div>
+          <div className='weather-icon'><i class="fa-solid fa-cloud-sun"></i></div>
+          <div>{weather}</div>
+    
           <div>{description}</div>
 
         </div>
@@ -31,7 +32,7 @@ const RightContainer = ({
           <div>Sunset <br />{sunset}</div>
           <div>Sunrise <br /> {sunrise}</div>
           <div>Feels Like <br />{feelsLike}</div>
-          <div>Wind Speed {windSpeed}</div>
+          <div>Wind Speed <br /> {windSpeed}</div>
 
         </div>
         

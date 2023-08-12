@@ -25,7 +25,7 @@ const LeftContainer = ({ temperature, humidity, country, location }) => {
       <div className="city-country-container">
 
         <div className="humidity-container">
-          <span> Humidity {humidity}</span>
+          <span>Humidity{humidity}</span>
         </div>
 
         <div className="place">

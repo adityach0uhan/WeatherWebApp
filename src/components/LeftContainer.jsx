@@ -8,11 +8,12 @@ const LeftContainer = ({ temperature, humidity, country, location }) => {
     console.log()
   }
 
+
   return (
     <div className="child-containers left-container">
       {/* input box  */}
       <div className="input-box-container">
-        <input className='search-bar' type="search" />
+        <input className='search-bar' onChange={e.target.value} type="search" />
         <button className='search-btn' onClick={sendSearchData}><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 

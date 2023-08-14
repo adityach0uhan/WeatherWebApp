@@ -1,19 +1,25 @@
-import React from 'react';
+import React, { useState } from 'react';
 import '../App.css';
 import '../styles/leftContainer.css'
 
-const LeftContainer = ({ temperature, humidity, country, location }) => {
-
-  const sendSearchData = () => {
-    console.log()
+const LeftContainer = ({ temperature, humidity, country, location, getUserData }) => {
+  
+  const [userinp, setUserInp] = useState('');
+  
+  function captureInput(e) {
+    setUserInp(e.target.value);
   }
 
+  function sendSearchData() {
+    getUserData(userinp);
+    setUserInp('')
+  }
 
   return (
     <div className="child-containers left-container">
       {/* input box  */}
       <div className="input-box-container">
-        <input className='search-bar' onChange={e.target.value} type="search" />
+        <input className='search-bar' value={userinp} onChange={captureInput} type="search" />
         <button className='search-btn' onClick={sendSearchData}><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
 

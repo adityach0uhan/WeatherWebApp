@@ -11,15 +11,19 @@ function App() {
   const [background, setBackground] = useState("");
   const [weatherData, setWeatherData] = useState({})
   const [userInput,setUserInput]=useState("")
+  
+  // let city = userInput
+
+  function getUserData(place) {
+    setUserInput(place);
+  }
 
 
-  let city = "pune"
-
-
+  useEffect(() => {
   async function getWeatherData() {
 
     try {
-      const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${API_KEY}`);
+      const fetchData = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${userInput}&units=metric&appid=${API_KEY}`);
       const APIdata = await fetchData.json()
 
       const { temp, feels_like, humidity } = APIdata.main
@@ -32,8 +36,6 @@ function App() {
 
       const { main, description } = APIdata.weather[0]
       
-
-
       setWeatherData({
         temp,
         feels_like,
@@ -51,7 +53,11 @@ function App() {
       console.log(e)
     }
   }
-  useEffect(() => { setBackground(`/images/${weatherData.main}.jpg`); getWeatherData() }, [background,city]);
+    
+    getWeatherData();
+    setUserInput('')
+  }, [userInput])
+  useEffect(() => { setBackground(`/images/sunny.jpg`);  }, [background,]);
 
 
 
@@ -70,6 +76,9 @@ function App() {
             humidity={weatherData.humidity}
             country={weatherData.country}
             location={weatherData.location}
+            getUserData={getUserData}
+            setUserInp={setUserInput}
+            userInput={userInput}
             
           />
 

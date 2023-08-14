@@ -5,11 +5,9 @@ import '../styles/leftContainer.css'
 const LeftContainer = ({ temperature, humidity, country, location, getUserData }) => {
   
   const [userinp, setUserInp] = useState('');
-  
   function captureInput(e) {
     setUserInp(e.target.value);
   }
-
   function sendSearchData() {
     getUserData(userinp);
     setUserInp('')

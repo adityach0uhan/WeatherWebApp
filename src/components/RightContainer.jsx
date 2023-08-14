@@ -10,25 +10,27 @@ const RightContainer = ({
   weather,
   description }) => {
 
+  const weather_data= weather.toLowerCase();
   let currentWeather;
-  // const sunny = <i class="fa-solid fa-sun"></i>
-  // const rainy = <i className="fa-solid fa-cloud-rain"></i>
-  // const cloudy = <i class="fa-solid fa-cloud-rain"></i>
-  // const haze = <i className="fa-solid fa-smog"></i>
-  // const clear = <i class="fa-solid fa-cloud"></i>
+  const sunny = <i class="fa-solid fa-sun"></i>
+  const rainy = <i className="fa-solid fa-cloud-rain"></i>
+  const cloudy = <i class="fa-solid fa-cloud-rain"></i>
+  const haze = <i className="fa-solid fa-smog"></i>
+  const clear = <i class="fa-solid fa-cloud"></i>
 
-  // if (weather.includes("sunny" || "Sunny")) {
-  //   currentWeather = sunny
-  // }if (weather.includes("rain" || "rainy")) {
-  //   currentWeather = rainy
-  // } if (weather.includes("cloudy"||"Cloud" || "clouds")) {
-  //   currentWeather = cloudy
-  // } if (weather.includes("haze"||"Haze")) {
-  //   currentWeather = haze
-  // } else {
-  //   currentWeather = clear
-  // }
+  if (weather_data.includes("sunny")) {
+    alert("sunny")
+  } else if (weather_data.includes("haze")) {
+    alert("haze")
+  } else if (weather_data.includes("rain" || "rainy")) {
+    alert("rain")
+  } else if (weather_data.includes("cloudy" || "cloud")) {
+    alert("cloudy")
+  } else {
+    alert("clear")
+  }
 
+ 
   return (
     <>
       <div className="child-containers right-container">
